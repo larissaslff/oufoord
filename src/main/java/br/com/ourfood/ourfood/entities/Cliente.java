@@ -1,16 +1,28 @@
 package br.com.ourfood.ourfood.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "tb_cliente")
 public class Cliente {
     private String nome;
+    @Id
     private String cpf;
     private String telefone;
     private String endereco;
     private String email;
+
+    @OneToMany
     private List<Compra> listaDeCompras = new ArrayList<>();
 
+    public Cliente(){
+    }
     public Cliente(String nome, String cpf, String telefone, String endereco, String email) {
         this.nome = nome;
         this.cpf = cpf;
@@ -62,7 +74,7 @@ public class Cliente {
         this.email = email;
     }
 
-    public List<Compra> getListaDeCompras() {
+   public List<Compra> getListaDeCompras() {
         return listaDeCompras;
     }
 
