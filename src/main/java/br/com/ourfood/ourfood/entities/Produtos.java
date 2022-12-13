@@ -10,6 +10,8 @@ public class Produtos {
     private Long id;
     private String nome;
     private String descricao;
+    @ManyToOne
+    private Itens itens;
 
     public Produtos(){
     };

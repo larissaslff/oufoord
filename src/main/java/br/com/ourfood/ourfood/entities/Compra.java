@@ -13,15 +13,17 @@ public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date data;
+    private Date data = new Date();
     @ManyToOne
     private Cliente cliente;
     @OneToMany
     private List<Itens> itens = new ArrayList<>();
 
     public Compra(){}
-    public Compra(List<Itens> itens) {
+    public Compra(List<Itens> itens, Date data, Cliente cliente) {
         this.itens = itens;
+        this.data= data;
+        this.cliente = cliente;
     }
 
     public List<Itens> getItens() {
@@ -31,6 +33,7 @@ public class Compra {
     public void setItens(Itens itens) {
         this.itens.add(itens);
     }
+
 
     @Override
     public String toString() {
