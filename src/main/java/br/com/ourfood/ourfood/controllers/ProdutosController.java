@@ -3,6 +3,7 @@ package br.com.ourfood.ourfood.controllers;
 import br.com.ourfood.ourfood.entities.Cliente;
 import br.com.ourfood.ourfood.entities.Produtos;
 import br.com.ourfood.ourfood.repositories.ProdutosRepository;
+import br.com.ourfood.ourfood.service.ProdutosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,20 +14,20 @@ import java.util.Optional;
 @RequestMapping("/produtos")
 public class ProdutosController {
     @Autowired
-    ProdutosRepository repository;
+    ProdutosService service;
 
     @GetMapping
     public List<Produtos> buscarTodos() {
-        return repository.findAll();
+        return service.buscarTodos();
     }
 
     @PostMapping
     public void novoProduto(@RequestBody Produtos produto) {
-        repository.save(produto);
+        service.cadastrarProduto(produto);
     }
 
     @GetMapping("/{id}")
     public Optional<Produtos> buscarPorId(@PathVariable Long id){
-        return repository.findById(id);
+        return service.buscarProdutoPorId(id);
     }
 }

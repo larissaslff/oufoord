@@ -35,10 +35,10 @@ public class Compra {
     }
 
 
-    @Override
+ /*   @Override
     public String toString() {
         return "Compra:" +
                 "itens =" + itens +
                 '}';
-    }
+    }*/
 }
