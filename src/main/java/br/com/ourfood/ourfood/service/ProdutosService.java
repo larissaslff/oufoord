@@ -2,7 +2,6 @@ package br.com.ourfood.ourfood.service;
 
 
 import br.com.ourfood.ourfood.entities.Produtos;
-import br.com.ourfood.ourfood.excepcions.ProdutoExistenteExcpecion;
 import br.com.ourfood.ourfood.repositories.ProdutosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

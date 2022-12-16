@@ -11,10 +11,10 @@ public class Itens {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int quantidadeDeProdutos;
-
     @ManyToOne
     private Compra compra;
     @OneToMany
+   // @JoinColumn(name = "id", nullable = false)
     private List<Produtos> produto;
 
     public Itens(int quantidadeDeProdutos, List<Produtos> produto) {
