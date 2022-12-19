@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +12,10 @@ import java.util.List;
 @Entity
 @Table(name = "tb_cliente")
 public class Cliente {
+    @NotBlank
     private String nome;
     @Id
+    @NotBlank
     private String cpf;
     private String telefone;
     private String endereco;

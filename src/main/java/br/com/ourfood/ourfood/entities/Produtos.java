@@ -1,6 +1,7 @@
 package br.com.ourfood.ourfood.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tb_produtos")
@@ -8,6 +9,7 @@ public class Produtos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private String nome;
     private String descricao;
     @ManyToOne
